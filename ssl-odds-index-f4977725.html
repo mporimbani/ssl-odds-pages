@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯赔率资料整理 · 实用索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
+      background: linear-gradient(145deg, #fdebd0 0%, #f6d5b3 45%, #efc8a0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #2e241e;
+    }
+
+    .card {
+      max-width: 800px;
+      width: 100%;
+      background: #fffcf8;
+      border-radius: 36px;
+      box-shadow: 0 16px 40px rgba(110, 70, 30, 0.18), 0 6px 16px rgba(80, 50, 20, 0.08);
+      padding: 2.8rem 2.6rem;
+      transition: transform 0.2s ease;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem 1.4rem;
+        border-radius: 28px;
+      }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #b4602e, #8a3f1c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      border-left: 6px solid #c97e4a;
+      padding-left: 1rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7f5f46;
+      margin-bottom: 2rem;
+      padding-left: 1.6rem;
+      font-style: italic;
+      border-bottom: 1px dashed #dbb594;
+      padding-bottom: 0.6rem;
+    }
+
+    .intro {
+      background: #f8efe7;
+      border-radius: 24px;
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 0 0 1px #eddccc;
+    }
+
+    .intro p {
+      margin-bottom: 0.8rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-item {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.2rem 1.2rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(150, 90, 40, 0.08);
+      border: 1px solid #edd4c2;
+      transition: box-shadow 0.25s;
+    }
+
+    .highlight-item:hover {
+      box-shadow: 0 8px 20px rgba(160, 95, 35, 0.15);
+    }
+
+    .highlight-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #8f4e28;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.3px;
+    }
+
+    .highlight-item p {
+      font-size: 0.9rem;
+      color: #4c3b30;
+    }
+
+    .scene-block {
+      background: #fffbf5;
+      border-radius: 30px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0 1.5rem;
+      border: 1px solid #eaccb8;
+    }
+
+    .scene-block h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #7a4a2c;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .scene-block ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .scene-block li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .scene-block li::before {
+      content: "•";
+      color: #b4673b;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .tip-box {
+      background: #f3e4d9;
+      border-radius: 40px 16px 40px 16px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .tip-box strong {
+      color: #783f1d;
+    }
+
+    .faq-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+    }
+
+    @media (max-width: 560px) {
+      .faq-mini {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item {
+      border-bottom: 1px dashed #dbb594;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-item dt {
+      font-weight: 600;
+      color: #8a4d28;
+      margin-bottom: 0.15rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-item dd {
+      font-size: 0.88rem;
+      color: #4f3b2e;
+    }
+
+    .link-sentence {
+      background: #f5e7dd;
+      border-radius: 100px;
+      padding: 0.75rem 1.6rem;
+      display: inline-block;
+      margin-top: 0.2rem;
+      font-size: 0.98rem;
+      word-break: break-word;
+    }
+
+    .link-sentence a {
+      color: #8f4b24;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #dba278;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-sentence a:hover {
+      border-bottom-color: #7d3f1d;
+      color: #632f12;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #8b735f;
+      text-align: center;
+      border-top: 1px solid #e6cfbe;
+      padding-top: 1.2rem;
+      letter-spacing: 0.2px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dba97a;
+      color: #2b1e16;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>世界杯赔率 · 资料索引手册</h1>
+    <div class="subhead">从信息碎片到实用脉络 · 一份安静的整理</div>
+
+    <div class="intro">
+      <p>每当世界杯临近，围绕赔率的讨论总会升温。但多数时候，大家面对的是一堆来不及消化的数字、截图和二手消息。这个页面想做的事很简单——<strong>把零散的世界杯赔率信息，梳理成可以反复查阅的资料卡片</strong>。不渲染、不预测，只帮你更快找到该看什么。</p>
+      <p>你可以把这里当成一个<strong>轻量级导航站</strong>：用最短路径接触到真实赔率面板，剩下的判断交给自己。</p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h3>📋 多源对照</h3>
+        <p>不用在十几个标签页里来回翻，赔率变化、主流公司差异都能集中浏览。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>🔍 结构优先</h3>
+        <p>按赛事阶段、球队、盘口类型做了基础归类，比直接刷论坛更省时间。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>📌 常看常新</h3>
+        <p>页面指向的资料来源保持更新，适合赛前、赛中和复盘时反复查阅。</p>
+      </div>
+    </div>
+
+    <div class="scene-block">
+      <h2>🧩 哪些场景用得上</h2>
+      <ul>
+        <li><strong>赛前摸底</strong> —— 想快速了解某场比赛的初始赔率分布，不用翻几十条社交媒体。</li>
+        <li><strong>中途变盘</strong> —— 实时跟进升降赔与热度，把握市场情绪拐点。</li>
+        <li><strong>历史对比</strong> —— 回顾小组赛到决赛的赔率轨迹，辅助理解赛果逻辑。</li>
+        <li><strong>资料整理</strong> —— 写分析、做表格、和朋友讨论时，需要一个可靠的数据锚点。</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 使用建议</strong> · 把赔率当参考坐标，而不是结论。再漂亮的数字也只是概率映射，真实赛场总有意外。这个页面只帮你<strong>更高效地检索</strong>，不替你做决定。保持理性，享受比赛本身。
+    </div>
+
+    <div class="faq-mini">
+      <div class="faq-item">
+        <dt>这里的赔率来源可靠吗？</dt>
+        <dd>我们整理的信息指向公开的赔率聚合平台，并非单一博彩公司，减少偏倚。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>页面多久更新一次？</dt>
+        <dd>赔率本身实时变动，索引页会跟随赛事节奏同步整理，重要节点会做标注。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>我可以分享这些整理内容吗？</dt>
+        <dd>当然，资料类内容欢迎转发，保留出处即可。我们不拥有赔率数据，只是做了筛选和排版。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>为什么不做预测？</dt>
+        <dd>预测是球迷和媒体的乐趣，资料整理是另一回事。我们更倾向于提供干净、可追溯的素材。</dd>
+      </div>
+    </div>
+
+    <p class="link-sentence">
+      如果你正在找一份清晰的世界杯赔率面板，可以直接进入 
+      <a href="https://ssl-odds-worldcup.com">世界杯赔率</a> 
+      资料区，所有核心数据都聚合在同一个视图里。
+    </p>
+
+    <div class="footer-note">
+      <span class="badge">资料型页面 · 不构成任何建议</span>
+      <span style="margin: 0 0.6rem;">·</span>
+      内容整理自公开信息 · 仅供个人参考
+    </div>
+  </div>
+</body>
+</html>
