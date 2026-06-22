@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德州扑克游戏 · 持续关注与收藏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafbfc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1d23;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 3.6rem;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 3.2rem;
+      border-bottom: 1px solid #e7eaee;
+      padding-bottom: 2.8rem;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      background: #eef0f3;
+      color: #3a404a;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 650;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+      color: #0f1117;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #555b66;
+      max-width: 580px;
+    }
+
+    /* 优势区 — 简洁高密度卡片 */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 1.6rem;
+      margin: 2.6rem 0 3.2rem;
+    }
+
+    .strength-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.4rem 1.2rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #ebedf0;
+    }
+
+    .strength-item h3 {
+      font-size: 0.95rem;
+      font-weight: 620;
+      margin-bottom: 0.3rem;
+      color: #0b0d12;
+    }
+
+    .strength-item p {
+      font-size: 0.85rem;
+      color: #5a606b;
+      line-height: 1.5;
+    }
+
+    /* 说明区 — 窄列文本 */
+    .explain-block {
+      margin: 2.8rem 0 2.4rem;
+    }
+
+    .explain-block h2 {
+      font-size: 1.5rem;
+      font-weight: 620;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: #13161d;
+    }
+
+    .explain-block p {
+      margin-bottom: 1rem;
+      color: #343a45;
+    }
+
+    .explain-block a {
+      color: #1652f0;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .explain-block a:hover {
+      border-bottom-color: #1652f0;
+    }
+
+    /* 场景 / 提示 (混合) */
+    .note-box {
+      background: #f3f5f8;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+
+    .note-box h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #12151c;
+    }
+
+    .note-box p {
+      font-size: 0.9rem;
+      color: #414754;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      border-top: 1px solid #e2e6ec;
+      padding-top: 2rem;
+      margin: 2.8rem 0 2.2rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #181c24;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      padding: 0.2rem 0;
+    }
+
+    .faq-question {
+      font-weight: 550;
+      font-size: 0.95rem;
+      color: #1f232b;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-answer {
+      font-size: 0.85rem;
+      color: #4d5360;
+      line-height: 1.5;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 3rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #e2e6ec;
+      font-size: 0.85rem;
+      color: #5d6472;
+      text-align: left;
+    }
+
+    .footer-links a {
+      color: #1a1d23;
+      text-decoration: none;
+      border-bottom: 1px solid #c9cfd9;
+      transition: border-color 0.15s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #0f1117;
+    }
+
+    .footer-note {
+      margin-top: 0.6rem;
+      color: #7b8392;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      .page {
+        padding: 1.6rem 1rem 2.8rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .strength-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .faq-summary {
+        padding-top: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区: 再次访问、收藏与关注 -->
+    <div class="hero">
+      <span class="hero__badge">持续追踪 · 收藏即用</span>
+      <h1>德州扑克游戏<br>再访与收藏的价值</h1>
+      <p>日常浏览中，一次收藏也许只是举手之劳。但若你对策略、手牌分析与长期学习抱有期待，<strong>将页面固定或加入书签</strong>便成为习惯的开始。每一局模拟、每一篇拆解，都值得反复回看。</p>
+    </div>
+
+    <!-- 优势区：三个关键维度（卡片） -->
+    <div class="strength-grid">
+      <div class="strength-item">
+        <h3>持续内容更新</h3>
+        <p>规则讲解、常见起手牌范围、底池赔率图解，主题按周轮换。常回访可系统补全认知盲区。</p>
+      </div>
+      <div class="strength-item">
+        <h3>干净阅读体验</h3>
+        <p>无弹窗干扰、无强制注册。专注手牌与局面，复习时不打断思路。</p>
+      </div>
+      <div class="strength-item">
+        <h3>收藏即入口</h3>
+        <p>无需搜索引擎二次定位。将链接存于书签，每次打开直达最新实践内容。</p>
+      </div>
+      <div class="strength-item">
+        <h3>多端适配</h3>
+        <p>移动设备与桌面排版一致。碎片时间回顾一手牌例，或深读策略文章。</p>
+      </div>
+    </div>
+
+    <!-- 说明区：再次访问的深层理由 -->
+    <div class="explain-block">
+      <h2>为什么值得再次打开</h2>
+      <p>德州扑克游戏涉及的决策树与概率直觉，无法一次性掌握。许多玩家在初次接触后，隔几天回来重新阅读同一篇手牌解析，往往发现新的思考角度。这也是该站点设计之初的意图——不是一次性资讯页，而是可供反复参照的素材库。</p>
+      <p>如果你对《<a href="https://official-holdemgames.com">德州扑克游戏</a>》的核心逻辑保持好奇，不妨将当前页面收藏至浏览器或笔记应用。后续更新的内容将围绕位置策略、3-bet 与防守范围、摊牌价值等话题展开，并附带可复盘的牌谱。</p>
+      <p>保持关注，比短时间刷完更重要。每一次回访，都可能修正一个之前的错误假设。</p>
+    </div>
+
+    <!-- 场景 / 提示（提示区） -->
+    <div class="note-box">
+      <h3>使用提示</h3>
+      <p>建议每周至少回访一次。优先阅读“最新更新”板块（首页右侧），其中包含对上期内容的补充与勘误。你可以把站点添加到主屏幕（iOS Safari / Android Chrome），下次打开时与原生应用体验接近。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h2>常见问题 · 摘要</h2>
+      <div class="faq-item">
+        <div class="faq-question">网站会频繁改版吗？</div>
+        <div class="faq-answer">结构基本稳定，仅优化排版和导航。收藏的链接不会失效，可以长期使用。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">是否需要登录或付费？</div>
+        <div class="faq-answer">完全免费，无会员墙。所有内容对所有访客开放。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">手机阅读体验如何？</div>
+        <div class="faq-answer">采用响应式设计，字号与间距适配小屏，适合通勤或睡前快速浏览一手牌。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">有没有下载或离线功能？</div>
+        <div class="faq-answer">目前不提供离线下载，建议通过浏览器书签或稍后阅读工具保存页面。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <span>你可以将 </span><a href="https://official-holdemgames.com">德州扑克游戏</a><span> 加入书签栏，或通过分享功能固定至快速访问面板。</span>
+      <div class="footer-note">定期回来，比一次性浏览更有收获。页面内容以严谨为前提，不提供任何必胜策略或违法承诺。</div>
+    </div>
+  </div>
+</body>
+</html>
